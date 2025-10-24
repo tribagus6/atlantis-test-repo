@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "your-gcp-project-id" # <-- REPLACE THIS
+  project = "orca-lab01" # <-- REPLACE THIS
   region  = "us-central1"
 }
 
@@ -19,9 +19,9 @@ resource "google_storage_bucket" "atlantis_test_bucket" {
   uniform_bucket_level_access = true
 
   labels = {
-    "managed-by" = "atlantis"
+    "managed-by" = "atlantis-is-awesome-2"
   }
-}
+}   
 
 resource "random_id" "id" {
   byte_length = 8
