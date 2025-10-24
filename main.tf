@@ -12,8 +12,18 @@ provider "google" {
   region  = "us-central1"
 }
 
-resource "random_id" "id" {
-  byte_length = 8
+# --- This is our new resource ---
+
+# We use a random_id to make sure the topic name is always unique
+resource "random_id" "topic_suffix" {
+  byte_length = 4
 }
 
-#test
+# This creates a new Pub/Sub topic
+resource "google_pubsub_topic" "atlantis_test_topic" {
+  name = "atlantis-test-topic-${random_id.topic_suffix.hex}"
+  
+  labels = {
+    "managed-by" = "atlantis"
+  }
+}
