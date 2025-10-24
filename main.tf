@@ -12,16 +12,16 @@ provider "google" {
   region  = "us-central1"
 }
 
-resource "google_storage_bucket" "atlantis_test_bucket" {
-  name     = "atlantis-test-bucket-${random_id.id.hex}"
-  location = "US"
+# resource "google_storage_bucket" "atlantis_test_bucket" {
+#   name     = "atlantis-test-bucket-${random_id.id.hex}"
+#   location = "US"
 
-  uniform_bucket_level_access = true
+#   uniform_bucket_level_access = true
 
-  labels = {
-    "managed-by" = "atlantis-is-awesome-2"
-  }
-}   
+#   labels = {
+#     "managed-by" = "atlantis-is-awesome-2"
+#   }
+# }
 
 resource "random_id" "id" {
   byte_length = 8
