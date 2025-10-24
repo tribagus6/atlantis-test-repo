@@ -19,7 +19,7 @@ resource "google_storage_bucket" "atlantis_test_bucket" {
   uniform_bucket_level_access = true
 
   labels = {
-    "managed-by" = "atlantis-is-awesome"
+    "managed-by" = "atlantis-is-awesome-2"
   }
 }   
 
