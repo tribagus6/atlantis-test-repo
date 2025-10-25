@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket = "orca-terraform-state-bucket"
-    prefix = "tribagus6/atlantis-test-repo"
+    bucket  = "orca-terraform-state-bucket"
+    prefix  = "tribagus6/atlantis-test-repo"
     project = "orca-labhost"
   }
 
@@ -14,11 +14,9 @@ terraform {
 }
 
 provider "google" {
-  project = "orca-lab01" 
+  project = "orca-lab01"
   region  = "us-central1"
 }
-<<<<<<< HEAD
-=======
 
 resource "random_id" "bucket_suffix" {
   byte_length = 4
@@ -37,4 +35,3 @@ resource "google_storage_bucket" "atlantis_demo_bucket" {
     "managed-by" = "atlantis-gcs-backend-test"
   }
 }
->>>>>>> af13329 (change the backend to gcs orca-labhost)
