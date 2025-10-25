@@ -1,9 +1,10 @@
 terraform {
   backend "gcs" {
     bucket = "orca-terraform-state-bucket"
-    prefix = "tribagus6/atlantis-test-repo"    
+    prefix = "tribagus6/atlantis-test-repo"
+    project = "orca-labhost"
   }
-  
+
   required_providers {
     google = {
       source  = "hashicorp/google"
